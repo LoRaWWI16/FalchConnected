@@ -20,7 +20,8 @@ from rest_framework import routers
 from falchsite import views
 
 router = routers.DefaultRouter()
-router.register(r'device_types', views.Device_TypesViewSet, base_name='device_types')
+#router.register(r'device_types', views.Device_TypesViewSet, base_name='device_types')
+router.register(r'devices', views.DevicesViewSet, base_name='devices')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
