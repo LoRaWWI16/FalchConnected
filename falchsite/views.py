@@ -16,11 +16,11 @@ from .serializers import *
     def get(self, request):
         queryset = Device_Type.objects.all()
         serializer = Device_TypeSerializer(queryset, many=True)
-        return Response({"device": serializer.data})
+        return Response({"device_types": serializer.data})
 """
 
 class DeviceViewSet(APIView):
     def get(self, request):
         queryset = Device.objects.all()
-        serializer = Device_Serializer(queryset, many=True)
+        serializer = DeviceSerializer(queryset, many=True)
         return Response({"device": serializer.data})
