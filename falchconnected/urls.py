@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, re_path, include
 from django.contrib import admin
 
 urlpatterns = [
-    path('^admin/', admin.site.urls),
-    re_path('api/', include('falchsite.urls'))
+    url(r'^admin/', admin.site.urls),
+    django.urls.re_path('api/', include('falchsite.urls'))
     ]
