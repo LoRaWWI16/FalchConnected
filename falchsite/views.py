@@ -9,7 +9,7 @@ from .serializers import *
 
 # Create your views here.
 
-class Device_TypesViewSet(APIView.ModelViewSet):
+class Device_TypesViewSet(APIView):
     """
     Provides a get method handler
     """
