@@ -1,6 +1,6 @@
-from django.urls import path
+from django.conf.urls import url, include
 from .views import ListDevice_Types
 
 urlpatterns = [
-    path('device_types/', ListDevice_Types.as_view(), name="device_types-all")
+    url(r'device_types/', ListDevice_Types.as_view(), name="device_types-all")
 ]
