@@ -17,10 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib import admin
 from rest_framework import routers
-from FalchConnected.falchsite import views
+from falchsite import views
 
 router = routers.DefaultRouter()
-router.register(r'device_types', views.Device_TypeViewSet)
+router.register(r'device_types', views.Device_TypesViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
