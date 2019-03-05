@@ -9,6 +9,7 @@ from .serializers import *
 
 # Create your views here.
 
+@override
 class Device_TypesViewSet(viewsets.ModelViewSet):
     """
     Provides a get method handler
