@@ -18,7 +18,7 @@ class Component(models.Model):
 class Device_Type(models.Model):
     name = models.CharField(max_length=50)
     service_hours = models.IntegerField()
-    component = models.ForeignKey(Component, on_delete=models.CASCADE)
+    components = models.ManyToManyField(Component)
 
 #    def __str__(self):
 #        return self.name
