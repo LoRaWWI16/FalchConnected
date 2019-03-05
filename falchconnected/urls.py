@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib import admin
 from rest_framework import routers
-from .views import *
+from FalchConnected.falchsite.views import *
 
 router = routers.DefaultRouter()
 router.register(r'device_types', views.Device_TypeViewSet)
