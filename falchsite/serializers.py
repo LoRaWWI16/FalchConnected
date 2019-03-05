@@ -11,10 +11,10 @@ class ComponentSerializer(serializers.HyperlinkedModelSerializer):
         model = Component
         fields = ("name")
 
-class Device_TypeSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Device_Type
-        fields = ("name", "service_hours", "components")
+class Device_TypeSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=120)
+    service_hours = serializers.IntegerField()
+    components = serializers.CharField()
 
 class PermissionsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

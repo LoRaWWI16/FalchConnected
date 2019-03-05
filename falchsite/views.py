@@ -13,5 +13,7 @@ class Device_TypesViewSet(APIView):
     """
     Provides a get method handler
     """
-    queryset = Device_Type.objects.all()
-    serializers_class = Device_TypeSerializer
+    def get(self, request):
+        queryset = Device_Type.objects.all()
+        serializer = Device_TypeSerializer(queryset, many=True)
+        return Response({"device types": serializer.data})
