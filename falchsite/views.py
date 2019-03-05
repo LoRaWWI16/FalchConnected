@@ -13,5 +13,5 @@ class ListDevice_Types(generics.ListAPIView):
     """
     Provides a get method handler
     """
-    queryset = Device_Type.name.all()
+    queryset = Device_Type.name
     serializers_class = Device_TypeSerializer
