@@ -27,9 +27,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("email", "password", "permission")
 
 class DeviceSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Device
-        fields = ("name", "user", "device_type")
+    name = serializers.CharField(max_length=120)
+    user = serializers.IntegerField()
+    device_type = serializers.IntegerField()
 
 class ModuleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
