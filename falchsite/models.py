@@ -18,7 +18,16 @@ class Component(models.Model):
 class Device_Type(models.Model):
     name = models.CharField(max_length=50)
     service_hours = models.IntegerField()
-    component = models.ForeignKey(Component, on_delete=models.CASCADE)
+    operating_pressure = models.IntegerField() #integer Arbeitsdruck
+    conveying_capacity = models.DecimalField() #decimal Fördermenge
+    pump_rotational_frequency = models.IntegerField() #Pumpendrehzahl IntegerField
+    oil_temperature = models.DecimalField() #Öltemperatur
+    motor_error_code = models.CharField(max_length=7) # Motorfehlercode Varchar (7)
+    longitude = models.FloatField() #Standort Longitude Längengrad float
+    latitude = models.FloatField() # Standort Breitengrad float
+    heating_up_time = models.IntegerField()# Aufheizzeit integer
+
+    components = models.ManyToManyField(Component)
 
 #    def __str__(self):
 #        return self.name
