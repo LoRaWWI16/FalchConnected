@@ -21,7 +21,7 @@ class Device_Type(models.Model):
     operating_pressure = models.IntegerField() #integer Arbeitsdruck
     conveying_capacity = models.DecimalField() #decimal Foerdermenge
     pump_rotational_frequency = models.IntegerField() #Pumpendrehzahl IntegerField
-    oil_temperature = models.DecimalField(e) #Oeltemperatur
+    oil_temperature = models.DecimalField() #Oeltemperatur
     motor_error_code = models.CharField(max_length=7) # Motorfehlercode Varchar (7)
     longitude = models.FloatField() #Standort Longitude Laengengrad float
     latitude = models.FloatField() # Standort Breitengrad float
