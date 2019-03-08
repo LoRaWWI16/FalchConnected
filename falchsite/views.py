@@ -14,7 +14,8 @@ class Device_TypesViewSet(APIView):
 #    Provides a get method handler
 
     def get(self, request):
-        queryset = Device_Type.objects.all()
+        #queryset = Device_Type.objects.all()
+        queryset = Device_Type.objects.all().prefetch_related('components')
         serializer = Device_TypeSerializer(queryset, many=True)
         return Response({"device_types": serializer.data})
 

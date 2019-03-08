@@ -20,8 +20,8 @@ class Device_Type(models.Model):
     service_hours = models.IntegerField()
     components = models.ManyToManyField(Component)
 
-    def __str__(self):
-        return self.name, ",".join(component.name for component in self.components.all())
+    #def __str__(self):
+    #    return self.name, ",".join(component.name for component in self.components.all())
 
 class Permission(models.Model):
     description = models.CharField(max_length=50)
