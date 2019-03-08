@@ -28,7 +28,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("email", "password", "permission")
 
 class DeviceSerializer(serializers.Serializer):
-    id = serializer.IntegerField()
+    id = serializers.IntegerField()
     name = serializers.CharField(max_length=120)
     user = serializers.CharField()
     device_type = serializers.CharField()
