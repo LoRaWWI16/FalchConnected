@@ -9,7 +9,7 @@ from .serializers import *
 
 # Create your views here.
 
-"""class Device_TypesViewSet(APIView):
+class Device_TypesViewSet(APIView):
 
 #    Provides a get method handler
 
@@ -17,7 +17,7 @@ from .serializers import *
         queryset = Device_Type.objects.all()
         serializer = Device_TypeSerializer(queryset, many=True)
         return Response({"device_types": serializer.data})
-"""
+
 
 class DeviceViewSet(APIView):
 
