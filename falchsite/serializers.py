@@ -12,6 +12,7 @@ class ComponentSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("name")
 
 class Device_TypeSerializer(serializers.Serializer):
+    id = serializer.IntegerField()
     name = serializers.CharField(max_length=120)
     service_hours = serializers.IntegerField()
     components = serializers.CharField()
@@ -27,6 +28,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("email", "password", "permission")
 
 class DeviceSerializer(serializers.Serializer):
+    id = serializer.IntegerField()
     name = serializers.CharField(max_length=120)
     user = serializers.CharField()
     device_type = serializers.CharField()
