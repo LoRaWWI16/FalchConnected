@@ -26,12 +26,12 @@ class Device_Type(models.Model):
     longitude = models.FloatField() #Standort Longitude Längengrad float
     latitude = models.FloatField() # Standort Breitengrad float
     heating_up_time = models.IntegerField()# Aufheizzeit integer
-
+    
     components = models.ManyToManyField(Component)
-
-#    def __str__(self):
-#        return self.name
-
+    
+    #def __str__(self):
+    #    return self.name, ",".join(component.name for component in self.components.all()) 
+ 
 class Permission(models.Model):
     description = models.CharField(max_length=50)
 
