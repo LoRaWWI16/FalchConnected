@@ -19,11 +19,11 @@ class Device_Type(models.Model):
     name = models.CharField(max_length=50)
     service_hours = models.IntegerField()
     operating_pressure = models.IntegerField() #integer Arbeitsdruck
-    conveying_capacity = models.DecimalField(max_digits=None, decimal_places=None) #decimal Fördermenge
+    conveying_capacity = models.DecimalField(max_digits=None, decimal_places=None) #decimal Foerdermenge
     pump_rotational_frequency = models.IntegerField() #Pumpendrehzahl IntegerField
-    oil_temperature = models.DecimalField(max_digits=None, decimal_places=None) #Öltemperatur
+    oil_temperature = models.DecimalField(max_digits=None, decimal_places=None) #Oeltemperatur
     motor_error_code = models.CharField(max_length=7) # Motorfehlercode Varchar (7)
-    longitude = models.FloatField() #Standort Longitude Längengrad float
+    longitude = models.FloatField() #Standort Longitude Laengengrad float
     latitude = models.FloatField() # Standort Breitengrad float
     heating_up_time = models.IntegerField()# Aufheizzeit integer
 
