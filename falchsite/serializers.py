@@ -46,6 +46,6 @@ class NotificationSerializer(serializers.HyperlinkedModelSerializer):
 class LogSerializer(serializers.Serializer):
     data = serializers.IntegerField()
     timestamp = serializers.CharField()
-    signal = serializers.IntegerField()
-    module = serializers.IntegerField()
+    signal = serializers.CharFieldField()
+    module = serializers.CharFieldField()
     notification = serializers.CharField()
