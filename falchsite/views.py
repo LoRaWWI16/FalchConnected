@@ -30,20 +30,16 @@ class DeviceViewSet(APIView):
         serializer = DeviceSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
 
-"""class OneDeviceViewSet(APIView):
+class OneDeviceViewSet(APIView):
 
-    def get(self, request):
+    def get(self, request, device_id):
         queryset = Device.objects.get()
-        idURL = request.query_params.get('id', None)
+#        idURL = request.query_params.get('id', None)
         #queryset = Device.objects.all.filter(id=idURL)
         if (idURL != None):
-            queryset = queryset.filter(id=idURL)
+            queryset = queryset.filter(id=device_id)
         serializer = DeviceSerializer(queryset, many=False)
         return Response({"device": serializer.data})
-"""
-class DeviceFilterSet(ModelFilterSet):
-    class Meta(object):
-        model = Device
 
 query = QueryDict('id=1')
 fs = DeviceFilterSet(data=query, queryset=Device.objects.all())
