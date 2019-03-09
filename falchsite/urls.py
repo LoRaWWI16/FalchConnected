@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-#from .views import Device_TypesViewSet
+from .views import Device_TypesViewSet
 from .views import DeviceViewSet
 
 urlpatterns = [
