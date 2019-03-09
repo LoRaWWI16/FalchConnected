@@ -12,8 +12,10 @@ def error_list(request):
                 errors.remove(l)
 
     # Aufschluesselung der Device ID zu Device Name
-#    for e in errors:
-#        e[4] = Device.objects.filter(id=int(e.get("device"))).get("name")
+    for e in errors:
+        if e.get("signal") == 2:
+            e["notification"] = "Service faellig"
+#        e["device"] = Device.objects.filter(id=int(e.get("device"))).get("name")
     return errors
 
 
