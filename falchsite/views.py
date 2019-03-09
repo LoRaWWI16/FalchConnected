@@ -34,7 +34,7 @@ class OneDeviceViewSet(APIView):
 
     def get(self, kwargs, id):
         deviceID = self.kwargs['id']
-        queryset = Device.objects.filter(id=deviceID)
+        queryset = Device.objects.filter(device_id=deviceID)
         serializer = DeviceSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
 
