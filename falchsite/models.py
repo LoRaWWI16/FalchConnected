@@ -54,13 +54,6 @@ class Device(models.Model):
 #    def __str__(self):
 #        return self.name
 
-class Module(models.Model):
-    device = models.OneToOneField(Device, on_delete=models.CASCADE, primary_key=True)
-    name = models.CharField(max_length=50)
-
-    #    def __str__(self):
-    #        return self.name
-
 class Notification(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
