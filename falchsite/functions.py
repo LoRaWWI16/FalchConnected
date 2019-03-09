@@ -7,7 +7,7 @@ def error_list(request):
     errors = list(logs)
     for l in logs:
         if l.get("signal_id") == 2:
-            if (1000-l.get("data"))>50:
+            if (1000-int(l.get("data")))>50:
                 errors.remove(l)
     return errors
 
