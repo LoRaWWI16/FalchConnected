@@ -31,10 +31,12 @@ class Device_TypesViewSet(APIView):
 class OneDeviceViewSet(APIView):
 
     def get(self, request):
-        #queryset = Device.objects.get(id=kwargs['device_id'])
-        idURL = request.GET.get('id', '')
-        queryset = Device.objects.all.filter(id=idURL)
-        serializer = DeviceSerializer(queryset, many=True)
+        queryset = Device.objects.get()
+        idURL = request.query_params.get('id', None)
+        #queryset = Device.objects.all.filter(id=idURL)
+        if (id != None):
+            queryset = queryset.filter(id=idURL)
+        serializer = DeviceSerializer(queryset, many=False)
         return Response({"device": serializer.data})
 
 class ErrorViewSet(APIView):
