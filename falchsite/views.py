@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
 from .serializers import *
+from .functions import *
 
 # Create your views here.
 
@@ -34,3 +35,10 @@ class OneDeviceViewSet(APIView):
         queryset = Device.request.Get.get('id', '')
         serializer = DeviceSerializer(queryset, many=False)
         return Response({"device": serializer.data})
+
+class ErrorViewSet(APIView):
+
+    def get(self, request):
+        queryset = error_list(request)
+        serializers = DeviceSerializer(queryset, many=True)
+        return Response({"errors": serializers.data})
