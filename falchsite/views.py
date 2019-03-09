@@ -34,7 +34,7 @@ class OneDeviceViewSet(APIView):
         queryset = Device.objects.get()
         idURL = request.query_params.get('id', None)
         #queryset = Device.objects.all.filter(id=idURL)
-        if (id != None):
+        if (idURL != None):
             queryset = queryset.filter(id=idURL)
         serializer = DeviceSerializer(queryset, many=False)
         return Response({"device": serializer.data})
