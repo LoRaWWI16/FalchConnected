@@ -33,11 +33,6 @@ class DeviceSerializer(serializers.Serializer):
     user = serializers.CharField()
     device_type = serializers.CharField()
 
-class ModuleSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Module
-        fields = ("name", "device")
-
 class NotificationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Notification
