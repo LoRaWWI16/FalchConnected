@@ -63,7 +63,7 @@ class Log(models.Model):
     data = models.CharField(max_length=128)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=False)
     signal = models.ForeignKey(Signal, on_delete=models.CASCADE)
-    module = models.ForeignKey(Module, on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, on_delete=models.CASCADE, default=1)
     notification = models.ForeignKey(Notification, on_delete=models.CASCADE)
 
 #    def __str__(self):
