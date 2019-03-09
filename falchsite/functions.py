@@ -15,7 +15,8 @@ def error_list(request):
     for e in errors:
         if e.get("signal") == 2:
             e["notification"] = "Service faellig"
-        e["device"] = Device.objects.filter(id=int(e.get("device"))).get("name")
+        tmp = Device.objects.filter(id=int(e.get("device")))
+        e["device"] = list(tmp).get("name")
     return errors
 
 
