@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.shortcuts import render
 
 def error_list(request):
-    logs = Log.objects.all().order_by('timestamp').values('data', 'timestamp', 'signal', 'notification')
+    logs = Log.objects.all().order_by('timestamp').values('data', 'timestamp', 'signal', 'notification', 'device')
     errors = list(logs)
     # Aussortieren der Log Dateien ohne Fehlermeldung
     for l in logs:
@@ -15,7 +15,7 @@ def error_list(request):
     for e in errors:
         if e.get("signal") == 2:
             e["notification"] = "Service faellig"
-#        e["device"] = Device.objects.filter(id=int(e.get("device"))).get("name")
+        e["device"] = Device.objects.filter(id=int(e.get("device"))).get("name")
     return errors
 
 

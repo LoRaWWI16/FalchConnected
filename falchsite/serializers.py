@@ -42,5 +42,5 @@ class LogSerializer(serializers.Serializer):
     data = serializers.IntegerField()
     timestamp = serializers.CharField()
     signal = serializers.CharField()
-#    device = serializers.CharField()
+    device = serializers.CharField()
     notification = serializers.CharField()
