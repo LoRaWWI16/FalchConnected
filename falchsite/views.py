@@ -34,7 +34,7 @@ class OneDeviceViewSet(APIView):
 
     def get(self, kwargs, id):
         deviceID = self.kwargs['id']
-        queryset = Log.objects.filter(device_id=deviceID)
+        queryset = Log.objects.filter(device_id=deviceID).values('data', 'timestamp', 'signal', 'notification', 'device')
         serializer = LogSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
 
