@@ -8,7 +8,7 @@ def error_list(request):
     for l in logs:
         if l.get("signal_id") == 2:
             if (1000-l.get("signal_id"))>50:
-                errors.pop(l)
+                errors.remove(l)
     return errors
 
 
