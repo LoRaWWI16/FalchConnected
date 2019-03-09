@@ -43,7 +43,7 @@ def error_list(request):
         if l.get("signal") == 6:
             # Signal ID 6
             # Berechnet, ob Oeltemperatur richtig
-            if float(l.get("data")) < 70 and int(l.get("data")) > 50:
+            if float(l.get("data")) < 70 and float(l.get("data")) > 50:
                 errors.remove(l)
 
         if l.get("signal") == 10:
