@@ -11,7 +11,7 @@ def error_list(request):
             if (1000-int(l.get("data")))>50:
                 errors.remove(l)
 
-    # Aufschluesselung der Device ID zu Device Name
+    # Aufschluesselung der Device ID zu Device Name und Hinzufügen der Notification
     for e in errors:
         if e.get("signal") == 2:
             e["notification"] = "Service faellig"
