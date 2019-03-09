@@ -19,7 +19,7 @@ class Device_Type(models.Model):
     name = models.CharField(max_length=50)
     service_hours = models.IntegerField(default=0)
     operating_pressure = models.IntegerField(default=0) #integer Arbeitsdruck
-    conveying_capacity = models.DecimalField(default=0, max_digits=7, decimal_places=4) #decimal Foerdermenge
+    conveying_capacity = models.DecimalField(default=0, max_digits=7, decimal_places=1) #decimal Foerdermenge
     pump_rotational_frequency = models.IntegerField(default=0) #Pumpendrehzahl IntegerField
     oil_temperature = models.DecimalField(default=0, max_digits=7, decimal_places=2) #Oeltemperatur
     motor_error_code = models.CharField(max_length=7, default='0') # Motorfehlercode Varchar (7)
