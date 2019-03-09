@@ -15,6 +15,14 @@ class Device_TypeSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     name = serializers.CharField(max_length=120)
     service_hours = serializers.IntegerField()
+    conveying_capacity = serializers.DecimalField(max_digits=7, decimal_places=1)
+    heating_up_time = serializers.IntegerField()
+    latitude = serializers.FloatField()
+    longitude = serializers.FloatField()
+    motor_error_code = name = serializers.CharField(max_length=7)
+    oil_temperature = conveying_capacity = serializers.DecimalField(max_digits=7, decimal_places=2)
+    operating_pressure = serializers.IntegerField()
+    pump_rotational_frequency = serializers.IntegerField()
     components = serializers.CharField()
 
 class PermissionsSerializer(serializers.HyperlinkedModelSerializer):
