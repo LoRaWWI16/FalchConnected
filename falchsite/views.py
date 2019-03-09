@@ -43,4 +43,4 @@ class ErrorViewSet(APIView):
     def get(self, request):
         queryset = error_list(request)
         serializers = LogSerializer(queryset, many=True)
-        return Response({"errors": serializers.data})
+        return Response(serializers.data)
