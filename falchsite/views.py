@@ -21,13 +21,13 @@ class Device_TypesViewSet(APIView):
         return Response({"device_types": serializer.data})
 
 
-"""class DeviceViewSet(APIView):
+class DeviceViewSet(APIView):
 
     def get(self, request):
         queryset = Device.objects.all()
         serializer = DeviceSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
-"""
+
 class OneDeviceViewSet(APIView):
 
     def get(self, request):
