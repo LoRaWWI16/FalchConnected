@@ -25,13 +25,13 @@ def error_list(request):
         if l.get("signal") == 3:
             # Signal ID 3
             # Berechnet, ob Arbeitsdruck ueberschritten
-            if int(l.get("data")<250):
+            if float(l.get("data"))<250:
                 errors.remove(l)
 
         if l.get("signal") == 4:
             # Signal ID 4
             # Berechnet, ob Foerdermenge ueberschritten
-            if int(l.get("data"))<12:
+            if float(l.get("data"))<12:
                 errors.remove(l)
 
         if l.get("signal") == 5:
@@ -43,7 +43,7 @@ def error_list(request):
         if l.get("signal") == 6:
             # Signal ID 6
             # Berechnet, ob Oeltemperatur richtig
-            if int(l.get("data")) < 70 and int(l.get("data")) > 50:
+            if float(l.get("data")) < 70 and int(l.get("data")) > 50:
                 errors.remove(l)
 
         if l.get("signal") == 10:
