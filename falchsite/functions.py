@@ -12,7 +12,7 @@ def error_list(request):
                 errors.remove(l)
 
     # Aufschluesselung der Device ID zu Device Name
-    for e in errors:
+#    for e in errors:
 #        e[4] = Device.objects.filter(id=int(e.get("device"))).get("name")
     return errors
 
