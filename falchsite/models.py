@@ -74,7 +74,10 @@ class Log(models.Model):
     signal = models.ForeignKey(Signal, on_delete=models.CASCADE)
     module = models.ForeignKey(Module, on_delete=models.CASCADE)
     notification = models.ForeignKey(Notification, on_delete=models.CASCADE)
+<<<<<<< HEAD
     device = models.ForeignKey(Device, on_delete=models.CASCADE, default=1)
+=======
+>>>>>>> parent of 645d614... Delete DB Table module 4
 
 #    def __str__(self):
 #        return self.data
