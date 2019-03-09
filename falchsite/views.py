@@ -7,6 +7,8 @@ from rest_framework.views import APIView
 from .models import *
 from .serializers import *
 from .functions import *
+from django.http import QueryDict
+from url_filter.filtersets import ModelFilterSet
 
 # Create your views here.
 
@@ -30,14 +32,18 @@ class DeviceViewSet(APIView):
 
 class OneDeviceViewSet(APIView):
 
-    def get(self, request):
+    def get(self, request, device_id):
         queryset = Device.objects.get()
-        idURL = request.query_params.get('id', None)
+#        idURL = request.query_params.get('id', None)
         #queryset = Device.objects.all.filter(id=idURL)
         if (idURL != None):
-            queryset = queryset.filter(id=idURL)
+            queryset = queryset.filter(id=device_id)
         serializer = DeviceSerializer(queryset, many=False)
         return Response({"device": serializer.data})
+
+query = QueryDict('id=1')
+fs = DeviceFilterSet(data=query, queryset=Device.objects.all())
+filtered_devices = fs.filter()
 
 class ErrorViewSet(APIView):
 
