@@ -18,8 +18,9 @@ def error_list(request):
         if l.get("signal") == 2:
             # Signal ID 2
             # Berechnet, ob Servicestunden faellig sind
-            if (int(Device_Type.objects.filter(id=int(l.get("device"))).values("service_hours").first()["service_hours"])
-                - int(l.get("data")))>50:
+ #           if (int(Device_Type.objects.filter(id=int(l.get("device"))).values("service_hours").first()["service_hours"])
+ #               - int(l.get("data")))>50:
+            if (5000-int(l.get("data"))>50):
                 errors.remove(l)
 
         if l.get("signal") == 3:
