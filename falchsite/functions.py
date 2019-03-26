@@ -12,7 +12,7 @@ def error_list(request):
         if l.get("signal") == 1:
             # Signal ID 1
             # Berechnet, ob maximale Lebenszeit ueberschritten
-            if int(l.get("data"))<500:
+            if int(l.get("data"))<5000:
                 errors.remove(l)
 
         if l.get("signal") == 2:
@@ -20,13 +20,13 @@ def error_list(request):
             # Berechnet, ob Servicestunden faellig sind
  #           if (int(Device_Type.objects.filter(id=int(l.get("device"))).values("service_hours").first()["service_hours"])
  #               - int(l.get("data")))>50:
-            if (5000-int(l.get("data"))>50):
+            if (500-int(l.get("data"))>50):
                 errors.remove(l)
 
         if l.get("signal") == 3:
             # Signal ID 3
             # Berechnet, ob Arbeitsdruck ueberschritten
-            if float(l.get("data"))<250:
+            if float(l.get("data"))<220:
                 errors.remove(l)
 
         if l.get("signal") == 4:
@@ -38,7 +38,7 @@ def error_list(request):
         if l.get("signal") == 5:
             # Signal ID 5
             # Berechnet, ob Pumpendrehzahl ueberschritten
-            if int(l.get("data"))<2500:
+            if int(l.get("data"))<2400:
                 errors.remove(l)
 
         if l.get("signal") == 6:
