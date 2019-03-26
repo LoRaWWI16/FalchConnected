@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 def error_list(request):
     # Ausgabe aller Log Dateien absteigend nach Timestamp mit Limit 1000
-    logs = Log.objects.all().order_by('-timestamp').values('data', 'timestamp', 'signal', 'notification', 'device')[:1000]
+    logs = Log.objects.all().order_by('-timestamp').values('data', 'timestamp', 'signal', 'notification', 'device')[:10]
     errors = list(logs)
     # Aussortieren der Log Dateien ohne Fehlermeldung
     for l in logs:
