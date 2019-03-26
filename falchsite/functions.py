@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.shortcuts import render
 
 def error_list(request):
-    # Ausgabe aller Log Dateien absteigend nach Timestamp mit Limit 1000
+    # Ausgabe aller Log Dateien absteigend nach Timestamp mit Limit
     logs = Log.objects.all().order_by('-timestamp').values('data', 'timestamp', 'signal', 'notification', 'device')[:50]
     errors = list(logs)
     # Aussortieren der Log Dateien ohne Fehlermeldung
@@ -44,7 +44,7 @@ def error_list(request):
         if l.get("signal") == 6:
             # Signal ID 6
             # Berechnet, ob Oeltemperatur richtig
-            if float(l.get("data")) < 65 and float(l.get("data")) > 40:
+            if float(l.get("data")) < 90 and float(l.get("data")) > 40:
                 errors.remove(l)
 
         if l.get("signal") == 10:
