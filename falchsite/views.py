@@ -22,18 +22,21 @@ class Device_TypesViewSet(APIView):
         serializer = Device_TypeSerializer(queryset, many=True)
         return Response({"device_types": serializer.data})
 
-
+# zeigt alle Geräte in der API an
 class DeviceViewSet(APIView):
 
     def get(self, request):
+        # SQL Select Befehl für alle Geräte
         queryset = Device.objects.all()
         serializer = DeviceSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
 
+# Anzeige der API eines einzelnen Gerätes wird über die Eingabe der ID in die URL Zeile erreicht
 class OneDeviceViewSet(APIView):
 
     def get(self, kwargs, id):
         deviceID = self.kwargs['id']
+        # SQL Befehl für ein Gerät mit Verweis auf die anderen Werte
         queryset = Log.objects.filter(device_id=deviceID).values('data', 'timestamp', 'signal', 'notification', 'device')
         serializer = LogSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
