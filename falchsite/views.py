@@ -41,6 +41,8 @@ class OneDeviceViewSet(APIView):
         serializer = LogSerializer(queryset, many=True)
         return Response({"devices": serializer.data})
 
+# Anzeige der API aller Fehler, die in den Logs identifiziert wurden
+# Die Logik erfolgt in der Klasse functions.py und wird über error_list(request) aufgerufen
 class ErrorViewSet(APIView):
 
     def get(self, request):
